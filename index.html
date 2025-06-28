@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta property="og:description" content="Asupan Videy Terupdate, Bikin Nagih Parah! Klik sebelum nyesel, tonton sebelum ilang! #fyp">
-    <title>Videy - Tonton Video Pilihan</title>
+        <meta property="og:description" content="Latest Video Feed, Seriously Addictive! Click before you regret it, watch before it's gone! #fyp">
+    <title>Videy - Watch Selected Videos</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-P9adkL5r/g02rN5Vf9i/Ff9F4h6rC2F1U0nFp7lF9n/w/X/b+w/h/c/e/d/a/x/y/z/A/B/C/D/E/F/G/H/I/J/K/L/M/N/O/P/Q/R/S/T/U/V/W/X/Y/Z/0/1/2/3/4/5/6/7/8/9/+/" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Favicon Videy Selin - Full Support -->
@@ -31,20 +31,20 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh; /* Pastikan konten mengisi tinggi viewport */
+            min-height: 100vh; /* Ensure content fills viewport height */
             color: var(--text-dark);
-            justify-content: center; /* Pusatkan konten vertikal */
+            justify-content: center; /* Center content vertically */
         }
 
         .container {
-            width: 95%; /* Kontainer utama tetap responsif */
+            width: 95%; /* Main container stays responsive */
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             box-sizing: border-box;
         }
 
-        /* Header dan Footer dihilangkan dari markup, jadi CSS ini bisa dihapus jika tidak ada elemen lain yang menggunakan stylenya */
+        /* Header and Footer removed from markup, so this CSS can be deleted if no other elements use its styles */
         /* header {
             background-color: var(--primary-color);
             color: var(--text-light);
@@ -65,12 +65,12 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            /* margin-top: 30px; */ /* Tidak perlu margin-top jika tidak ada header */
+            /* margin-top: 30px; */ /* No margin-top needed if there's no header */
         }
 
         .video-player-section {
             width: 100%;
-            max-width: 900px; /* Video player section tidak akan melebihi 900px */
+            max-width: 900px; /* Video player section won't exceed 900px */
             background-color: var(--card-bg);
             border-radius: 12px;
             box-shadow: 0 8px 25px var(--shadow-light);
@@ -83,9 +83,9 @@
         }
 
         .video-container {
-            background-color: #000; /* Latar belakang hitam untuk video */
-            width: 100%; /* Pastikan kontainer video mengambil seluruh lebar yang tersedia dari parent-nya */
-            height: auto; /* Tinggi akan disesuaikan oleh video di dalamnya */
+            background-color: #000; /* Black background for video */
+            width: 100%; /* Ensure video container takes full width from parent */
+            height: auto; /* Height will be adjusted by the video within */
         }
 
         .video-container::before {
@@ -94,11 +94,11 @@
         }
 
         .video-container video {
-            width: 100%; /* Video akan mengisi seluruh lebar kontainer video */
-            height: auto; /* Otomatis menyesuaikan tinggi untuk menjaga rasio aspek video asli */
-            display: block; /* Menghilangkan spasi ekstra di bawah video */
-            object-fit: contain; /* Pastikan seluruh video terlihat tanpa terpotong */
-            max-width: 100%; /* Pastikan video tidak melebihi lebar kontainer */
+            width: 100%; /* Video will fill entire video container width */
+            height: auto; /* Automatically adjust height to maintain original video aspect ratio */
+            display: block; /* Remove extra space below video */
+            object-fit: contain; /* Ensure entire video is visible without cropping */
+            max-width: 100%; /* Ensure video doesn't exceed container width */
         }
 
         .loading-message {
@@ -110,24 +110,24 @@
         }
 
         .iklan-videy {
-  text-align: center;
-  margin: 20px auto;
-}
+            text-align: center;
+            margin: 20px auto;
+        }
 
-.iklan-videy img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
+        .iklan-videy img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
 
-.iklan-videy img:hover {
-  transform: scale(1.03);
-}
+        .iklan-videy img:hover {
+            transform: scale(1.03);
+        }
 
-        /* Footer juga dihilangkan dari markup, jadi CSS ini bisa dihapus jika tidak ada elemen lain yang menggunakan stylenya */
+        /* Footer also removed from markup, so this CSS can be deleted if no other elements use its styles */
         /* footer {
             margin-top: auto;
             padding: 20px;
@@ -138,7 +138,7 @@
             box-shadow: 0 -2px 10px var(--shadow-light);
         } */
 
-        /* Responsive adjustments untuk elemen selain video */
+        /* Responsive adjustments for elements other than video */
         @media (max-width: 768px) {
             .container {
                 width: 98%;
@@ -156,17 +156,17 @@
         <div class="video-player-section">
             <div class="video-container">
                 <video controls playsinline id="mainVideo">
-                    Maaf, browser Anda tidak mendukung tag video.
+                    Sorry, your browser doesn't support the video tag.
                 </video>
             </div>
-            <p class="loading-message" id="loadingMessage">Memuat video...</p>
+            <p class="loading-message" id="loadingMessage">Loading video...</p>
         </div>
 
         <div class="ad-section">
             <div id="adsterra-native-banner" class="ad-placeholder">
             <div class="iklan-videy">
            <a href="https://incredibleenhancementslightning.com/w5v6n4cu?key=374bb739fed422f364d2844cad078004" target="_blank" rel="noopener noreferrer">
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitLrQbk44kV3kq_y844iCCnyX9lqqAYrlHedNdce0KT5i5hdSe6luxosOSCGxrzaNFKDH7km6Ad15I20HS4Im7PsaEPmMQyZInbWpaVi9GTh-MYjCTJ4090d_2e6h0X2i94bA2EFwjkiDpSfhCGbkSxdUUBdWP3FyeM8YCI17TfSxbgv-Qy5e3LKc6-q8/s1600/1000029256.png" alt="Asupan Videy Terupdate, Bikin Nagih Parah!">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitLrQbk44kV3kq_y844iCCnyX9lqqAYrlHedNdce0KT5i5hdSe6luxosOSCGxrzaNFKDH7km6Ad15I20HS4Im7PsaEPmMQyZInbWpaVi9GTh-MYjCTJ4090d_2e6h0X2i94bA2EFwjkiDpSfhCGbkSxdUUBdWP3FyeM8YCI17TfSxbgv-Qy5e3LKc6-q8/s1600/1000029256.png" alt="Latest Video Feed, Seriously Addictive!">
          </a>
          </div>
         </div>
@@ -209,7 +209,7 @@ hs.src = ('//s10.histats.com/js15_as.js');
                             if (foundVideo) {
                                 selectedVideoId = foundVideo.id;
                             } else {
-                                console.warn(`Video dengan ID '${requestedVideoId}' tidak ditemukan. Memuat video pertama.`);
+                                console.warn(`Video with ID '${requestedVideoId}' not found. Loading first video.`);
                                 selectedVideoId = data.videos[0].id;
                             }
                         } else {
@@ -222,18 +222,18 @@ hs.src = ('//s10.histats.com/js15_as.js');
                             videoElement.load();
                             loadingMessage.style.display = 'none';
                         } else {
-                            loadingMessage.textContent = 'Error: Tidak ada video untuk ditampilkan.';
-                            console.error('Tidak ada video yang valid untuk ditampilkan.');
+                            loadingMessage.textContent = 'Error: No video to display.';
+                            console.error('No valid video to display.');
                         }
 
                     } else {
-                        loadingMessage.textContent = 'Error: Tidak ada video ditemukan di JSON.';
-                        console.error('Array videos kosong atau tidak ada dalam file JSON.');
+                        loadingMessage.textContent = 'Error: No videos found in JSON.';
+                        console.error('Videos array is empty or not present in JSON file.');
                     }
                 })
                 .catch(error => {
-                    loadingMessage.textContent = `Gagal memuat video: ${error.message}`;
-                    console.error('Terjadi kesalahan saat mengambil data JSON:', error);
+                    loadingMessage.textContent = `Failed to load video: ${error.message}`;
+                    console.error('Error occurred while fetching JSON data:', error);
                 });
         });
     </script>
