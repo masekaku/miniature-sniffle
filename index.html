@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta property="og:description" content="Latest Video Feed, Seriously Addictive! Click before you regret it, watch before it's gone! #fyp">
-    <meta name="d53c0fb24189f8be7264b4a3b183405955c07b55" content="d53c0fb24189f8be7264b4a3b183405955c07b55" />
-   <meta name="referrer" content="no-referrer-when-downgrade" />
-    <title>Videy - Watch Selected Videos</title>
+    <title>Lato Atea</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-P9adkL5r/g02rN5Vf9i/Ff9F4h6rC2F1U0nFp7lF9n/w/X/b+w/h/c/e/d/a/x/y/z/A/B/C/D/E/F/G/H/I/J/K/L/M/N/O/P/Q/R/S/T/U/V/W/X/Y/Z/0/1/2/3/4/5/6/7/8/9/+/" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!-- Favicon Videy Selin - Full Support -->
-<link rel="icon" type="image/png" sizes="32x32" href="https://iili.io/FRBtqfj.md.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://iili.io/FRBtqfj.md.png">
-<link rel="shortcut icon" href="https://iili.io/FRBtqfj.md.png" type="image/png">
-<link rel="apple-touch-icon" href="https://iili.io/FRBtqfj.md.png">
     <style>
         :root {
             --primary-color: #007bff;
             --secondary-color: #6c757d;
-            --background-light: #f8f9fa;
+            --background-light: #000; 
             --text-dark: #343a40;
             --text-light: #ffffff;
             --card-bg: #ffffff;
@@ -33,46 +25,59 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh; /* Ensure content fills viewport height */
-            color: var(--text-dark);
-            justify-content: center; /* Center content vertically */
+            min-height: 100vh;
+            color: var(--text-light);
+            justify-content: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: #111;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        
+        .site-title {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .container {
-            width: 95%; /* Main container stays responsive */
+            width: 95%;
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             box-sizing: border-box;
         }
 
-        /* Header and Footer removed from markup, so this CSS can be deleted if no other elements use its styles */
-        /* header {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 15px 0;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 2px 10px var(--shadow-light);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-weight: 700;
-        } */
-
         .main-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            /* margin-top: 30px; */ /* No margin-top needed if there's no header */
+            margin-top: 20px;
         }
 
         .video-player-section {
             width: 100%;
-            max-width: 900px; /* Video player section won't exceed 900px */
+            max-width: 900px;
             background-color: var(--card-bg);
             border-radius: 12px;
             box-shadow: 0 8px 25px var(--shadow-light);
@@ -85,22 +90,17 @@
         }
 
         .video-container {
-            background-color: #000; /* Black background for video */
-            width: 100%; /* Ensure video container takes full width from parent */
-            height: auto; /* Height will be adjusted by the video within */
-        }
-
-        .video-container::before {
-            content: none; 
-            display: none;
+            background-color: #000;
+            width: 100%;
+            height: auto;
         }
 
         .video-container video {
-            width: 100%; /* Video will fill entire video container width */
-            height: auto; /* Automatically adjust height to maintain original video aspect ratio */
-            display: block; /* Remove extra space below video */
-            object-fit: contain; /* Ensure entire video is visible without cropping */
-            max-width: 100%; /* Ensure video doesn't exceed container width */
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            max-width: 100%;
         }
 
         .loading-message {
@@ -111,12 +111,12 @@
             font-size: 1.1em;
         }
 
-        .iklan-videy {
+        .ad-section {
             text-align: center;
             margin: 20px auto;
         }
 
-        .iklan-videy img {
+        .ad-section img {
             max-width: 100%;
             height: auto;
             border-radius: 12px;
@@ -125,22 +125,18 @@
             cursor: pointer;
         }
 
-        .iklan-videy img:hover {
+        .ad-section img:hover {
             transform: scale(1.03);
         }
 
-        /* Footer also removed from markup, so this CSS can be deleted if no other elements use its styles */
-        /* footer {
-            margin-top: auto;
-            padding: 20px;
-            background-color: var(--text-dark);
-            color: var(--text-light);
+        .histats-container {
+            margin-top: 15px;
+            padding: 10px;
             text-align: center;
-            width: 100%;
-            box-shadow: 0 -2px 10px var(--shadow-light);
-        } */
+            color: #888;
+            font-size: 0.9rem;
+        }
 
-        /* Responsive adjustments for elements other than video */
         @media (max-width: 768px) {
             .container {
                 width: 98%;
@@ -149,11 +145,20 @@
             .video-player-section, .ad-section {
                 margin-bottom: 20px;
             }
+            .site-title {
+                font-size: 1.4rem;
+            }
         }
     </style>
-   <script type='text/javascript' src='//incredibleenhancementslightning.com/6d/51/b1/6d51b11497baca14a2be46d5cba6e2fa.js'></script>
+  <script type='text/javascript' src='//incredibleenhancementslightning.com/6d/51/b1/6d51b11497baca14a2be46d5cba6e2fa.js'></script>  
 </head>
 <body>
+    <header>
+        <div class="header-content">
+            <h1 class="site-title">Lato Atea</h1>
+        </div>
+    </header>
+
     <div class="container main-content">
         <div class="video-player-section">
             <div class="video-container">
@@ -166,15 +171,13 @@
 
         <div class="ad-section">
             <div id="adsterra-native-banner" class="ad-placeholder">
-            <div class="iklan-videy">
-           <a href="https://incredibleenhancementslightning.com/w5v6n4cu?key=374bb739fed422f364d2844cad078004" target="_blank" rel="noopener noreferrer">
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitLrQbk44kV3kq_y844iCCnyX9lqqAYrlHedNdce0KT5i5hdSe6luxosOSCGxrzaNFKDH7km6Ad15I20HS4Im7PsaEPmMQyZInbWpaVi9GTh-MYjCTJ4090d_2e6h0X2i94bA2EFwjkiDpSfhCGbkSxdUUBdWP3FyeM8YCI17TfSxbgv-Qy5e3LKc6-q8/s1600/1000029256.png" alt="Latest Video Feed, Seriously Addictive!">
-         </a>
-         </div>
+                <a href="https://robox.digital/i/2264139" target="_blank" rel="noopener noreferrer">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitLrQbk44kV3kq_y844iCCnyX9lqqAYrlHedNdce0KT5i5hdSe6luxosOSCGxrzaNFKDH7km6Ad15I20HS4Im7PsaEPmMQyZInbWpaVi9GTh-MYjCTJ4090d_2e6h0X2i94bA2EFwjkiDpSfhCGbkSxdUUBdWP3FyeM8YCI17TfSxbgv-Qy5e3LKc6-q8/s1600/1000029256.png" alt="Updated Videy Content, Super Addictive!">
+                </a>
+            </div>
         </div>
-        </div>
-       <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
-<!-- Histats.com  START  (aync)-->
+        
+        <div class="histats-container">            
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,4960146,4,24,200,50,00011111']);
 _Hasync.push(['Histats.fasi', '1']);
@@ -185,7 +188,9 @@ hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4960146&101" alt="" border="0"></a></noscript>
-<!-- Histats.com  END  -->
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const videoElement = document.getElementById('mainVideo');
@@ -224,80 +229,20 @@ hs.src = ('//s10.histats.com/js15_as.js');
                             videoElement.load();
                             loadingMessage.style.display = 'none';
                         } else {
-                            loadingMessage.textContent = 'Error: No video to display.';
+                            loadingMessage.textContent = 'Error: No video available.';
                             console.error('No valid video to display.');
                         }
 
                     } else {
                         loadingMessage.textContent = 'Error: No videos found in JSON.';
-                        console.error('Videos array is empty or not present in JSON file.');
+                        console.error('Videos array is empty or missing in JSON file.');
                     }
                 })
                 .catch(error => {
                     loadingMessage.textContent = `Failed to load video: ${error.message}`;
-                    console.error('Error occurred while fetching JSON data:', error);
+                    console.error('Error fetching JSON data:', error);
                 });
         });
     </script>
-<script>
-	(() => {
-    const pageKey = `adShown_${window.location.pathname}`;
-    
-    if (sessionStorage.getItem(pageKey)) return;
-    
-    const triggerAd = () => {
-        // Remove listener immediately after first valid click
-        document.removeEventListener('pointerdown', triggerAd);
-        
-        // Create a dynamic iframe as decoy
-        const decoy = document.createElement('iframe');
-        decoy.style.display = 'none';
-        document.body.appendChild(decoy);
-        
-        try {
-            // Step 1: Open about:blank in new window
-            const newWin = decoy.contentWindow.open('', '_blank');
-            if (!newWin) return;
-            
-            // Step 2: Redirect after short delay
-            setTimeout(() => {
-                try {
-                    newWin.location.href = 'https://active-bat.com/475zGN';
-                    newWin.blur();
-                    window.focus();
-                    sessionStorage.setItem(pageKey, 'true');
-                } catch(e) {
-                    // Fallback method
-                    const link = document.createElement('a');
-                    link.target = '_blank';
-                    link.href = 'https://active-bat.com/475zGN';
-                    link.style.display = 'none';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                }
-            }, 50);
-        } catch(e) {
-            // Secondary fallback
-            const link = document.createElement('a');
-            link.target = '_blank';
-            link.href = 'https://active-bat.com/475zGN';
-            link.style.display = 'none';
-            document.body.appendChild(link);
-            link.click();
-            setTimeout(() => {
-                document.body.removeChild(link);
-                sessionStorage.setItem(pageKey, 'true');
-            }, 100);
-        } finally {
-            // Cleanup decoy
-            setTimeout(() => document.body.removeChild(decoy), 1000);
-        }
-    };
-
-    // Use pointerdown event for better mobile support
-    document.addEventListener('pointerdown', triggerAd);
-})();
-</script>
 </body>
 </html>
